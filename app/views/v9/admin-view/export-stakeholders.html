@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% from "radios/macro.njk" import govukRadios %}
+{% from "button/macro.njk" import govukButton %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+          <a href="stakeholder-index" class="govuk-back-link">Back</a>
+          <h1 class="govuk-heading-l" style="margin-bottom: 0px;">
+              Export stakeholders
+          </h1>
+      </div>
+  </div>
+  <br><br>
+  <div class="govuk-grid-row">
+      <div class="govuk-grid-column">
+          <p class="govuk-body">
+              This will export details of <strong>300 out of 300</strong> stakeholders in spreadsheet format.
+          </p>
+
+          <form action="view-stakeholder" method="post" novalidate="">
+              <p class="govuk-body">Select type of export:</p>
+              <div class="govuk-radios">
+                  <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="type" name="type" type="radio" value="conditions">
+                      <label class="govuk-label govuk-radios__label" for="type">
+                          Conditions stakeholders are interested in
+                      </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="type-2" name="type" type="radio" value="contact">
+                      <label class="govuk-label govuk-radios__label" for="type-2">
+                          Individual contact details
+                      </label>
+                  </div>
+              </div>
+              <br>
+              <br>
+              <div class="govuk-button-group">
+<button class="govuk-button" data-module="govuk-button">
+  Export stakeholders
+</button>
+
+<button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="
+  margin-left: 1%;
+">
+  Email stakeholders
+</button>
+</div>
+          </form>
+      </div>
+  </div>
+{% endblock %}

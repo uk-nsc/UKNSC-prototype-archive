@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+
+{% from "radios/macro.njk" import govukRadios %}
+{% from "button/macro.njk" import govukButton %}
+
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <a href="stakeholder-index" class="govuk-back-link" >Back</a>
+            <h1 class="govuk-heading-l" style="margin-bottom: 0px;">
+                Stakeholder details
+            </h1>
+        </div>
+
+        <div class="govuk-grid-column-one-third">
+            <div class="start-review" style="margin-top: 60px; float: right;">
+                <a href="edit-stakeholder" role="button" class="govuk-button">
+                    Edit stakeholder
+                </a>
+            </div>
+        </div>
+    </div>
+    <br><br>
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <p class="govuk-body">
+                <strong>Stakeholder name</strong><br>
+                University of Victoria
+            </p>
+            <p class="govuk-body">
+                <strong>Type of stakeholder</strong><br>
+                Academic institution
+            </p>
+            <p class="govuk-body">
+                <strong>Country</strong><br>
+                England, International
+            </p>
+            <p class="govuk-body">
+                <strong>Website</strong><br>
+                www.uvic.ac.uk
+            </p>
+            <p class="govuk-body">
+                <strong>Twitter</strong><br>
+                twitter.com/uvic
+            </p>
+            <p class="govuk-body">
+                <strong>Conditions interested in</strong><br>
+                Atrial fibrillation
+            </p>
+            <p class="govuk-body">
+                <strong>Comments</strong><br>
+                Interested in taking part in any workshops on this topic.
+            </p>
+            <p class="govuk-body">
+                <strong>Do not show this organisation as a stakeholder publicly.</strong>
+            </p>
+            <hr>
+            <br>
+            <p class="govuk-body">
+                <strong>Name of contact (optional)</strong><br>
+                Winona Smith
+            </p>
+            <p class="govuk-body">
+                <strong>Contact's role (optional)</strong><br>
+                Lead research on AF randomised control trial
+            </p>
+            <p class="govuk-body">
+                <strong>Contact's email (optional)</strong><br>
+                winona.smith@uvic.com
+            </p>
+            <p class="govuk-body">
+                <strong>Contact's mobile phone number (optional)</strong><br>
+                07123 456789
+            </p>
+        </div>
+    </div>
+{% endblock %}

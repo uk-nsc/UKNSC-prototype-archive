@@ -1,0 +1,165 @@
+{% extends "layout.html" %}
+
+{% from "radios/macro.njk" import govukRadios %}
+{% from "button/macro.njk" import govukButton %}
+
+
+{% block content %}
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <a href="stakeholder-index" class="govuk-back-link">Back</a>
+            <h1 class="govuk-heading-l" style="margin-bottom: 0px;">
+                Add a stakeholder
+            </h1>
+        </div>
+    </div>
+    <br><br>
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+            <form action="view-stakeholder" method="post" novalidate="">
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-one-half">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" for="stakeholder-name">
+                                Stakeholder name
+                            </label>
+                            <input class="govuk-input" id="stakeholder-name" name="stakeholder-name" type="text">
+                        </div>
+                    </div>
+                </div>
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-one-half">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" for="stakeholder-type">
+                                Stakeholder type
+                            </label>
+                            <select class="govuk-select" id="stakeholder-type" name="stakeholder-type" style="width: 100%">
+                                <option value="Royal College or other professional organisation">Royal College or other professional organisation</option>
+                                <option value="Academic/research organisation">Academic/research organisation</option>
+                                <option value="Patient group/voluntary sector ">Patient group/voluntary sector</option>
+                                <option value="Individual">Individual</option>
+                                <option value="Commercial organisation">Commercial organisation</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="govuk-grid-column-one-half">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" for="country">
+                                Country
+                            </label>
+                            <select class="govuk-select" id="country" name="country" style="width: 100%">
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="govuk-grid-column-one-half">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" for="website">
+                                Website
+                            </label>
+                            <input class="govuk-input" id="website" name="website" type="text">
+                        </div>
+                    </div>
+                    <div class="govuk-grid-column-one-half">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" for="twitter">
+                                Twitter
+                            </label>
+                            <input class="govuk-input" id="twitter" name="twitter" type="text">
+                        </div>
+                    </div>
+                    
+                    <div class="govuk-grid-column-one-half">
+                        <div class="govuk-form-group" style="margin-bottom:10px;">
+                            <label class="govuk-label" for="condition">
+                                Condition interested in:
+                            </label>
+                            <select class="govuk-select" id="condition" name="condition" style="width: 100%">
+                                <option value="atrial-fibrillation">Atrial fibrillation</option>
+                            </select>
+                        </div>
+                        <a href="#" class="govuk-link">add another condition</a>
+                    </div>
+                </div>
+                <br>
+<hr>
+                
+                <br>
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-one-half">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" for="contact-name">
+                                Name of contact (optional)
+                            </label>
+                            <input class="govuk-input" id="contact-name" name="contact-name" type="text">
+                        </div>
+                    </div>
+                    <div class="govuk-grid-column-one-half">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" for="contact-role">
+                                Contact's role (optional)
+                            </label>
+                            <input class="govuk-input" id="contact-role" name="contact-role" type="text">
+                        </div>
+                    </div>
+                    <div class="govuk-grid-column-one-half">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" for="contact-email">
+                                Contact's email (optional)
+                            </label>
+                            <input class="govuk-input" id="contact-email" name="contact-email" type="text">
+                        </div>
+                    </div>
+                    <div class="govuk-grid-column-one-half">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" for="contact-phone">
+                                Contact's mobile phone number (optional)
+                            </label>
+                            <input class="govuk-input" id="contact-phone" name="contact-phone" type="text">
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="govuk-link" style="position: relative; top: -19px">add another contact</a>
+    
+
+<div class="govuk-grid-column-full" style="
+    padding: 0;
+">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" for="comments">
+                                Additional comments (for internal use only)
+                            </label>
+                            <input class="govuk-input" id="comments" name="comments" type="text">
+                        </div>
+                    </div>
+                <hr>
+                <br>
+                <p class="govuk-body">Should this organisation be published on the condition pages?</p>
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-one-half">
+                        <div class="govuk-radios">
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="publish" name="publish" type="radio" value="yes">
+                                <label class="govuk-label govuk-radios__label" for="publish">
+                                    Yes, publish this organisation online
+                                </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="publish-2" name="publish" type="radio" value="no">
+                                <label class="govuk-label govuk-radios__label" for="publish-2">
+                                    No, do not show this organisation as a stakeholder publicly
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <button class="govuk-button" data-module="govuk-button">
+                    Save and continue
+                </button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

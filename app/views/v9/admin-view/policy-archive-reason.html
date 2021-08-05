@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% from "radios/macro.njk" import govukRadios %}
+{% from "button/macro.njk" import govukButton %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <a href="policy-view" class="govuk-back-link" >Back to recommendation</a>
+        <span class="govuk-caption-l">Archive recommendation</span>
+        <h1 class="govuk-heading-l" style="margin-bottom: 0px;">
+            Alcohol Misuse
+        </h1>
+    </div>
+</div>
+    <br><br>
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <form action="policy-archive-reason-error" method="post" novalidate>
+                <div class="govuk-form-group">
+                    <label class="govuk-label" for="public-statement">
+                        Why has this recommendation been archived?
+                    </label>
+                    <span id="public-statement-hint" class="govuk-hint">
+                        Write public statement to explain reasons for archiving recommendation (mandatory)<br>
+                        Use markdown to complete text field below
+                    </span>
+                    <textarea class="govuk-textarea js-character-count " id="message" name="message" rows="5">This condition has been archived because:
+* insert text</textarea>
+                </div>
+
+                <br>
+                <p class="govuk-body">
+                    <button class="govuk-button" data-module="govuk-button">
+                        Archive
+                    </button>
+                    <span style="position: relative; left: 8px; top: 8px">
+                        or <a class="govuk-link" href="policy-view">cancel</a>
+                    </span>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <h3 class="govuk-heading-m">More descriptive instructions?</h3>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-half">
+            <h4 class="govuk-heading-s">Headings</h4>
+            <p class="govuk-body">
+                ## Section or chapter heading (1, 2, 3 etc.)<br>
+                ### Subheading (1.1, 1.2 etc.)<br>
+                #### Sub-subheading (not numbered)
+            </p>
+            <h4 class="govuk-heading-s">Bullet lists</h4>
+            <p class="govuk-body">
+                * item 1<br>
+                * item 2<br>
+                All bullets must start with a lowercase letter
+            </p>
+        </div>
+        <div class="govuk-grid-column-one-half">
+            <h4 class="govuk-heading-s">Numbered lists</h4>
+            <p class="govuk-body">
+                1. Item 1<br>
+                2. Item 2<br>
+                Numbered lists show an order of steps or priorities
+            </p>
+            <h4 class="govuk-heading-s">Links (external sites)</h4>
+            <p class="govuk-body">
+                [link text](http://www.example.com)
+            </p>
+        </div>
+    </div>
+{% endblock %}

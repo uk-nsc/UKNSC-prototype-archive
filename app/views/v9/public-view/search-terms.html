@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block head %}
+    <link href="/public/stylesheets/unbranded.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="/public/stylesheets/phe-nsc-alpha.css" media="screen" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+          <a href="consultation" class="govuk-back-link">Back</a>
+          <h1 class="govuk-heading-l">
+              <span class="govuk-caption-l">UK NSC recommendations</span>
+              Search terms for finding conditions
+          </h1>
+
+          <p class="govuk-body">
+              Click on one of these search terms to find relevant conditions. The number in brackets after the term shows how many conditions it covers.
+          </p>
+
+<ul class="govuk-list">
+    <li>
+      <a class="govuk-link" href="search">Conditions which affect males (94)</a>
+    </li>
+    <li>
+      <a class="govuk-link" href="search">Conditions which affect females (98)</a>
+    </li>
+    <li>
+      <a class="govuk-link" href="search">Types of cancer (10)</a>
+    </li>
+    <li>
+      <a class="govuk-link" href="search">Cardiovascular conditions (7)</a>
+    </li>
+    <li>
+      <a class="govuk-link" href="search">Infectious diseases (5)</a>
+    </li>
+   <li>
+      <a class="govuk-link" href="search">Inherited conditions (39)</a>
+    </li>
+    <li>
+      <a class="govuk-link" href="search">Conditions where screening is no longer recommended (1)</a>
+    </li>
+  </ul>
+
+
+
+
+
+
+
+      </div>
+  </div>
+
+{% endblock %}
